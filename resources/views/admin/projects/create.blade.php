@@ -1,5 +1,5 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2>All projects</h2>
+    <h2>Create</h2>
 @endsection

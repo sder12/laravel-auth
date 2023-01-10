@@ -58,12 +58,14 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">
+                                <a class="nav-link text-white {{ Route::currentRouteName() === 'admin.projects.index' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.projects.index') }}">
                                     Projects
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">
+                                <a class="nav-link text-white {{ Route::currentRouteName() === 'admin.projects.create' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.projects.create') }}">
                                     Create new one
                                 </a>
                             </li>
