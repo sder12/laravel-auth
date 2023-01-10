@@ -1,5 +1,35 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2>All projects</h2>
+    <div class="container mt-4">
+        <h3 class="text-center">Tutti i projects</h3>
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Programs</th>
+                            <th scope="col">Creation year</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($projects as $project)
+                            <tr>
+                                <th scope="row">{{ $project->title }}</th>
+                                <td>{{ $project->utilized_programs }}</td>
+                                <td>{{ $project->creation_year }}</td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ route('admin.projects.show', $project->slug) }}">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection
