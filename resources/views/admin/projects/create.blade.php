@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2>Create</h2>
+    <div class="container mt-5">
+        <h2>Create</h2>
+    </div>
 @endsection
