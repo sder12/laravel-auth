@@ -16,6 +16,8 @@
                     <h4> {{ $project->title }}</h4>
                 </div>
 
+                @include('partials.errors')
+
                 <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -23,28 +25,54 @@
                     {{-- Title --}}
                     <div class="mb-3">
                         <label class="form-label" for="title">Title</label>
-                        <input class="form-control" id="title" type="text" name="title"
-                            value="{{ $project->title }}">
+                        <input class="form-control  @error('title') is-invalid @enderror" id="title" type="text"
+                            name="title" value="{{ $project->title }}">
+
+                        @error('title')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     {{-- Description --}}
                     <div class="mb-3">
                         <label class="form-label" for="description">Description</label>
-                        <textarea class="form-control" id="description" name="description" rows="3">{{ $project->description }}</textarea>
+                        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
+                            rows="3">{{ $project->description }}</textarea>
+
+                        @error('description')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     {{-- Programs --}}
                     <div class="mb-3">
                         <label class="form-label" for="utilized_programs">Utilized programs & technology</label>
-                        <input class="form-control" type="text" id="utilized_programs" name="utilized_programs"
-                            value="{{ $project->utilized_programs }}">
+                        <input class="form-control @error('utilized_programs') is-invalid @enderror" type="text"
+                            id="utilized_programs" name="utilized_programs" value="{{ $project->utilized_programs }}">
+
+                        @error('utilized_programs')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     {{-- Year --}}
                     <div class="mb-3">
                         <label class="form-label" for="creation_year">Year of creation</label>
-                        <input class="form-control" id="creation_year" type="number" min="1990" max="2030"
-                            value="{{ $project->creation_year }}" name="creation_year">
+                        <input class="form-control  @error('creation_year') is-invalid @enderror" id="creation_year"
+                            type="number" min="1990" max="2030" value="{{ $project->creation_year }}"
+                            name="creation_year">
+
+                        @error('creation_year')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     {{-- BTN --}}
