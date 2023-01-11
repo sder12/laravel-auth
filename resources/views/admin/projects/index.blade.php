@@ -47,18 +47,18 @@
                                     </a>
                                     {{-- 1. CANCELLAZIONE IMMEDIATA --}}
                                     {{-- <form class="d-inline-block"
-                                            action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
-                                            @method('DELETE')
-                                            @csrf
+                                        action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
 
-                                            <button class="btn btn-danger">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </form> --}}
+                                        <button class="btn btn-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form> --}}
 
                                     {{-- 2. CANCELLAZIONE CON BOOSTRAP MODAL IN OGNI ELEMENTO, SEMPLICE MA CODICE NON OTTIMALE --}}
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    {{-- <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                         data-bs-target="#delete-project-{{ $project->id }}">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
@@ -89,9 +89,18 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
-
+                                    {{-- 3. CANCELLAZIONE OTTIMALE CON app.js e nuovo parials --}}
+                                    <form class="d-inline-block"
+                                        action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button class="btn btn-danger delete-btn"
+                                            data-project-title="{{ $project->title }}">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -100,4 +109,6 @@
             </div>
         </div>
     </div>
+    {{-- 3. CANCELLAZIONE OTTIMALE --}}
+    @include('partials.delete-modal')
 @endsection
