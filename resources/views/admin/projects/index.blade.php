@@ -10,7 +10,7 @@
 
                 {{-- MESSAGE FROM CONTROLLER --}}
                 @if (session('message'))
-                    <div class="alert alert-success mt-3">
+                    <div class="alert alert-warning mt-3">
                         {{ session('message') }}
                     </div>
                 @endif
@@ -45,7 +45,11 @@
                                     <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>
-                                    <form class="d-inline-block" action="">
+                                    <form class="d-inline-block"
+                                        action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+
                                         <button class="btn btn-danger">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
