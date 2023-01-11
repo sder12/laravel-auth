@@ -3,6 +3,13 @@
 @section('content')
     <div class="container mt-4">
         <h3 class="text-center">Projects</h3>
+
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <div class="row justify-content-center">
             <div class="col-8">
                 <table class="table">

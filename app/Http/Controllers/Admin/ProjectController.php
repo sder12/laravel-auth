@@ -41,7 +41,7 @@ class ProjectController extends Controller
         $data = $request->all();
         $data['slug'] = Project::generateSlug($data['title']);
         $project = Project::create($data);
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index')->with('message', "Added new project, titled: $project->title");
     }
 
     /**
