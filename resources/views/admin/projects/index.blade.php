@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container mt-5">
         <h3 class="text-center">Projects</h3>
 
         @if (session('message'))
@@ -12,6 +12,14 @@
 
         <div class="row justify-content-center">
             <div class="col-8">
+                {{-- Add new proj --}}
+                <div class="text-end">
+                    <a href="{{ route('admin.projects.create') }}" class="btn btn-dark text-end">
+                        <i class="fa-regular fa-square-plus"></i>
+                    </a>
+                </div>
+
+                {{-- TABLE --}}
                 <table class="table">
                     <thead>
                         <tr>
