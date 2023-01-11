@@ -10,7 +10,9 @@
                     <h4 class="pb-2">Create new project</h4>
                 </div>
 
-                <form action="">
+                <form action="{{ route('admin.projects.store') }}" method="POST">
+                    @csrf
+
                     {{-- Title --}}
                     <div class="mb-3">
                         <label class="form-label" for="title">Title</label>

@@ -38,7 +38,10 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Project::generateSlug($data['title']);
+        $project = Project::create($data);
+        dd($project);
     }
 
     /**
