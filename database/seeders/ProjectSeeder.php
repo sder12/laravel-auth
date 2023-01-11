@@ -31,7 +31,7 @@ class ProjectSeeder extends Seeder
             //creation_year
             $project->creation_year = $faker->year();
             //slug
-            $project->slug = Str::slug($project->title, '-');
+            $project->slug = Project::generateSlug($project->title);
             //SAVE
             $project->save();
         }

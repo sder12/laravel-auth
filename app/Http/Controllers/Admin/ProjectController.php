@@ -41,7 +41,7 @@ class ProjectController extends Controller
         $data = $request->all();
         $data['slug'] = Project::generateSlug($data['title']);
         $project = Project::create($data);
-        dd($project);
+        return redirect()->route('admin.projects.index');
     }
 
     /**
