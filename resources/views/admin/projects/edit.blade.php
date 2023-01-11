@@ -16,31 +16,35 @@
                     <h4> {{ $project->title }}</h4>
                 </div>
 
-                <form action="">
+                <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST">
+                    @csrf
+                    @method('PUT')
 
                     {{-- Title --}}
                     <div class="mb-3">
                         <label class="form-label" for="title">Title</label>
-                        <input class="form-control" id="title" type="text" name="title">
+                        <input class="form-control" id="title" type="text" name="title"
+                            value="{{ $project->title }}">
                     </div>
 
                     {{-- Description --}}
                     <div class="mb-3">
                         <label class="form-label" for="description">Description</label>
-                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                        <textarea class="form-control" id="description" name="description" rows="3">{{ $project->description }}</textarea>
                     </div>
 
                     {{-- Programs --}}
                     <div class="mb-3">
                         <label class="form-label" for="utilized_programs">Utilized programs & technology</label>
-                        <input class="form-control" type="text" id="utilized_programs" name="utilized_programs">
+                        <input class="form-control" type="text" id="utilized_programs" name="utilized_programs"
+                            value="{{ $project->utilized_programs }}">
                     </div>
 
                     {{-- Year --}}
                     <div class="mb-3">
                         <label class="form-label" for="creation_year">Year of creation</label>
                         <input class="form-control" id="creation_year" type="number" min="1990" max="2030"
-                            value="2020" name="creation_year">
+                            value="{{ $project->creation_year }}" name="creation_year">
                     </div>
 
                     {{-- BTN --}}

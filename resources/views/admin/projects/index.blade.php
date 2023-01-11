@@ -4,14 +4,17 @@
     <div class="container mt-5">
         <h3 class="text-center">Projects</h3>
 
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
-
         <div class="row justify-content-center">
             <div class="col-8">
+
+
+                {{-- MESSAGE FROM CONTROLLER --}}
+                @if (session('message'))
+                    <div class="alert alert-success mt-3">
+                        {{ session('message') }}
+                    </div>
+                @endif
+
                 {{-- Add new proj --}}
                 <div class="text-end">
                     <a href="{{ route('admin.projects.create') }}" class="btn btn-dark text-end">
