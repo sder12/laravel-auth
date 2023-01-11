@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-4">
-        <h3 class="text-center">Tutti i projects</h3>
+        <h3 class="text-center">Projects</h3>
         <div class="row justify-content-center">
             <div class="col-8">
                 <table class="table">
@@ -27,7 +27,7 @@
                                     <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}">
                                         <i class="fa-solid fa-pencil"></i>
                                     </a>
-                                    <form class="d-inline" action="">
+                                    <form class="d-inline-block" action="">
                                         <button class="btn btn-danger">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
