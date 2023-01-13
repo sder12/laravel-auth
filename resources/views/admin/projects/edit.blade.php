@@ -18,7 +18,8 @@
 
                 @include('partials.errors')
 
-                <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST">
+                <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -35,6 +36,18 @@
                         @enderror
                     </div>
 
+                    {{-- IMAGE --}}
+                    <div class="mb-3">
+                        <label class="form-label" for="cover_img">Image</label>
+                        <input class="form-control @error('cover_img') is-invalid @enderror" id="cover_img" type="file"
+                            name="cover_img">
+
+                        @error('cover_img')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
                     {{-- Description --}}
                     <div class="mb-3">
                         <label class="form-label" for="description">Description</label>

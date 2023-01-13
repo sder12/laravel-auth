@@ -12,7 +12,7 @@
 
                 @include('partials.errors')
 
-                <form action="{{ route('admin.projects.store') }}" method="POST">
+                <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     {{-- Title --}}
@@ -22,6 +22,19 @@
                             name="title" value="{{ old('title') }}">
 
                         @error('title')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    {{-- IMAGE --}}
+                    <div class="mb-3">
+                        <label class="form-label" for="cover_img">Image</label>
+                        <input class="form-control @error('cover_img') is-invalid @enderror" id="cover_img" type="file"
+                            name="cover_img">
+
+                        @error('cover_img')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
