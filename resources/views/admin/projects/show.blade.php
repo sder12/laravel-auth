@@ -25,11 +25,13 @@
             <div class="mt-3">
                 <strong class="d-block">Image:</strong>
                 @if ($project->cover_img)
-                    <span>image</span>
+                    <img class="w-25" src="{{ asset('storage/' . $project->cover_img) }}" alt=””>
                 @else
-                    <span>no-img</span>
+                    <div class="w-75 py-4 text-center bg-warning bg-opacity-25"> NO IMAGE
+                    </div>
                 @endif
             </div>
+
             {{-- Modify btn --}}
             <div class="mt-3">
                 <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}">

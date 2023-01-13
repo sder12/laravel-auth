@@ -41,9 +41,10 @@
                                 <td>{{ $project->creation_year }}</td>
                                 <td>
                                     @if ($project->cover_img)
-                                        <span>image</span>
+                                        <img class="w-75" src="{{ asset('storage/' . $project->cover_img) }}" alt=””>
                                     @else
-                                        <span>NO-image</span>
+                                        <div class="w-75 py-4 text-center bg-warning bg-opacity-25"> NO IMAGE
+                                        </div>
                                     @endif
                                 </td>
                                 <td>
