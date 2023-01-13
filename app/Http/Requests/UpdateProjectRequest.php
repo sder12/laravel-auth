@@ -32,6 +32,7 @@ class UpdateProjectRequest extends FormRequest
             'description' => ['nullable'],
             'utilized_programs' => ['nullable', 'max:250'],
             'creation_year' => ['nullable'],
+            'cover_img' => ['nullable', 'image', 'max:520']
         ];
     }
 }
