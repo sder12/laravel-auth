@@ -22,6 +22,14 @@
                 <span>{{ $project->utilized_programs }}</span>
             </div>
 
+            <div class="mt-3">
+                <strong class="d-block">Image:</strong>
+                @if ($project->cover_img)
+                    <span>image</span>
+                @else
+                    <span>no-img</span>
+                @endif
+            </div>
             {{-- Modify btn --}}
             <div class="mt-3">
                 <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}">
