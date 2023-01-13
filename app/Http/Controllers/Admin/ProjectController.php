@@ -75,7 +75,7 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $data['slug'] = Project::generateSlug($data['title']);
         $project->update($data);
         return redirect()->route('admin.projects.index')->with('message', "The project $project->title was updated");
