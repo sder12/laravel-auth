@@ -5,7 +5,7 @@ import.meta.glob([
     '../img/**'
 ])
 
-
+//Delete btn
 const deleteBtns = document.querySelectorAll(".delete-btn");
 
 deleteBtns.forEach((btn) => {
@@ -22,3 +22,21 @@ deleteBtns.forEach((btn) => {
         modal.show();
     });
 });
+
+//Preview
+const coverImageInput = document.getElementById("cover_img"); //input img
+const imagePreview = document.getElementById("image_preview"); //preview img
+
+if (coverImageInput && imagePreview) {
+    // console.log('change', this.files[0]);
+    coverImageInput.addEventListener('change', function () {
+        const uploadedFile = this.files[0];
+        if (uploadedFile) { //if there is the file insert in src the path
+            const reader = new FileReader();
+            reader.addEventListener('load', function () {
+                imagePreview.src = reader.result;
+            });
+            reader.readAsDataURL(uploadedFile);
+        }
+    });
+}

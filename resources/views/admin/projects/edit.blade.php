@@ -47,7 +47,13 @@
                                 {{ $message }}
                             </div>
                         @enderror
+                        {{-- Preview dell'immagine esistente --}}
+                        {{-- <div class="mt-3" style="max-height: 200px">
+                            <img id="image_preview" src="{{ asset('storage/' . $post->cover_image) }}"
+                                alt="{{ 'Cover image di ' . $post->title }}">
+                        </div> --}}
                     </div>
+
                     {{-- Description --}}
                     <div class="mb-3">
                         <label class="form-label" for="description">Description</label>

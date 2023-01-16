@@ -39,6 +39,10 @@
                                 {{ $message }}
                             </div>
                         @enderror
+                        {{-- Previw Image --}}
+                        <div class="mt-3">
+                            <img id="image_preview" src="" alt="" style="max-height: 200px">
+                        </div>
                     </div>
 
                     {{-- Description --}}
