@@ -68,7 +68,7 @@
                     </div>
 
                     {{-- Programs --}}
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label class="form-label" for="utilized_programs">Utilized programs & technology</label>
                         <input class="form-control @error('utilized_programs') is-invalid @enderror" type="text"
                             id="utilized_programs" name="utilized_programs" value="{{ $project->utilized_programs }}">
@@ -78,7 +78,7 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div>
+                    </div> --}}
 
                     {{-- Year --}}
                     <div class="mb-3">

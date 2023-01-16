@@ -17,10 +17,10 @@
 
             <p class="mt-3">{{ $project->description }}</p>
 
-            <div class="mt-3">
+            {{-- <div class="mt-3">
                 <strong>Utilized programs:</strong>
                 <span>{{ $project->utilized_programs }}</span>
-            </div>
+            </div> --}}
 
             <div class="mt-3">
                 <strong class="d-block">Image:</strong>

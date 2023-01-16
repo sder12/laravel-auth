@@ -27,7 +27,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Title</th>
-                            <th scope="col">Programs</th>
+                            {{-- <th scope="col">Programs</th> --}}
                             <th scope="col">Creation year</th>
                             <th scope="col">Image</th>
                             <th scope="col">Actions</th>
@@ -37,7 +37,7 @@
                         @foreach ($projects as $project)
                             <tr>
                                 <th scope="row">{{ $project->title }}</th>
-                                <td>{{ $project->utilized_programs }}</td>
+                                {{-- <td>{{ $project->utilized_programs }}</td> --}}
                                 <td>{{ $project->creation_year }}</td>
                                 <td>
                                     @if ($project->cover_img)

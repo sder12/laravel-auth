@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 150)->unique();
             $table->text('description')->nullable();
-            $table->string('utilized_programs', 250)->nullable();
+            // $table->string('utilized_programs', 250)->nullable();
             $table->year('creation_year')->nullable();
             $table->string('slug');
             $table->timestamps();

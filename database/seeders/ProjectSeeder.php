@@ -27,7 +27,7 @@ class ProjectSeeder extends Seeder
             //description
             $project->description = $faker->text(400);
             // utilized_programs
-            $project->utilized_programs = $faker->sentence(3);
+            // $project->utilized_programs = $faker->sentence(3);
             //creation_year
             $project->creation_year = $faker->year();
             //slug
