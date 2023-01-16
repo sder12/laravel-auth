@@ -25,7 +25,8 @@
             <div class="mt-3">
                 <strong class="d-block">Image:</strong>
                 @if ($project->cover_img)
-                    <img class="w-25" src="{{ asset('storage/' . $project->cover_img) }}" alt=””>
+                    <img class="w-25" src="{{ asset('storage/' . $project->cover_img) }}"
+                        alt="{{ 'cover img of ' . $project->title }}">
                 @else
                     <div class="w-75 py-4 text-center bg-warning bg-opacity-25"> NO IMAGE
                     </div>
