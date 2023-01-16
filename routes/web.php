@@ -21,12 +21,11 @@ Route::get('/', function () {
 });
 
 // Route::get('/admin', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('admin.dashboard');
-
 Route::middleware(['auth', 'verified'])
-    ->prefix('admin')
-    ->name('admin.')
+    ->prefix('admin')   //url 
+    ->name('admin.')    //name
     ->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard'); // URL:/admin DEV:admin.dashbard
         Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
     });
 

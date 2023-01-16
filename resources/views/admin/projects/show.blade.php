@@ -2,26 +2,32 @@
 
 @section('content')
     <div class="container">
+
+        {{-- Back to All --}}
         <div class="mt-5">
             <a href="{{ route('admin.projects.index') }}" class="btn btn-dark">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
         </div>
-        <div>
-            <h1 class="text-center mt-3">{{ $project->title }}</h1>
+        {{-- /Back to All --}}
 
+        <div>
+            {{-- Title --}}
+            <h1 class="text-center mt-3">{{ $project->title }}</h1>
+            {{-- / Title --}}
+
+            {{-- Year + Slug --}}
             <div class="d-flex justify-content-between mt-3">
                 <h5>{{ $project->creation_year }}</h5>
                 <p>{{ $project->slug }}</p>
             </div>
+            {{-- / Year + Slug --}}
 
+            {{-- Description --}}
             <p class="mt-3">{{ $project->description }}</p>
+            {{-- / Description --}}
 
-            {{-- <div class="mt-3">
-                <strong>Utilized programs:</strong>
-                <span>{{ $project->utilized_programs }}</span>
-            </div> --}}
-
+            {{-- Image --}}
             <div class="mt-3">
                 <strong class="d-block">Image:</strong>
                 @if ($project->cover_img)
@@ -32,13 +38,15 @@
                     </div>
                 @endif
             </div>
+            {{-- / Image --}}
 
-            {{-- Modify btn --}}
+            {{-- Btn EDIT --}}
             <div class="mt-3">
                 <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}">
                     Modify
                 </a>
             </div>
+            {{-- /Btn EDIT --}}
         </div>
     </div>
 @endsection

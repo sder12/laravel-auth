@@ -5,17 +5,19 @@
         <div class="row justify-content-center">
             <div class="col col-8">
 
-                {{-- TITLE --}}
+                {{-- HEADING --}}
                 <div class=" mb-3 pb-2 border-bottom border-success border-2">
                     <h4 class="pb-2">Create new project</h4>
                 </div>
+                {{-- / HEADING --}}
 
                 @include('partials.errors')
 
+                {{-- FORM PROJECT --}}
                 <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                    {{-- Title --}}
+                    {{-- Title Project --}}
                     <div class="mb-3">
                         <label class="form-label" for="title">Title</label>
                         <input class="form-control @error('title') is-invalid @enderror" id="title" type="text"
@@ -27,6 +29,7 @@
                             </div>
                         @enderror
                     </div>
+                    {{-- / Title project --}}
 
                     {{-- IMAGE --}}
                     <div class="mb-3">
@@ -39,11 +42,13 @@
                                 {{ $message }}
                             </div>
                         @enderror
+
                         {{-- Previw Image --}}
                         <div class="mt-3">
                             <img id="image_preview" src="" alt="" style="max-height: 200px">
                         </div>
                     </div>
+                    {{-- / IMAGE --}}
 
                     {{-- Description --}}
                     <div class="mb-3">
@@ -57,18 +62,7 @@
                             </div>
                         @enderror
                     </div>
-
-                    {{-- Programs --}}
-                    {{-- <div class="mb-3">
-                        <label class="form-label" for="utilized_programs">Utilized programs & technology</label>
-                        <input class="form-control  @error('utilized_programs') is-invalid @enderror" type="text"
-                            id="utilized_programs" name="utilized_programs" value="{{ old('utilized_programs') }}">
-                        @error('utilized_programs')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div> --}}
+                    {{-- / Description --}}
 
                     {{-- Year --}}
                     <div class="mb-3">
@@ -82,12 +76,15 @@
                             </div>
                         @enderror
                     </div>
+                    {{-- /Year --}}
 
-                    {{-- BTN --}}
+                    {{-- Btn CREATE --}}
                     <div class="mb-3 pt-2">
                         <button type="submit" class="btn btn-success">Create</button>
                     </div>
+                    {{-- / Btn CREATE --}}
                 </form>
+                {{-- /FORM PROJECT --}}
 
             </div>
         </div>

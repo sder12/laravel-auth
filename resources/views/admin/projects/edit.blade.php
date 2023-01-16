@@ -2,28 +2,33 @@
 
 @section('content')
     <div class="container mt-5">
+        {{-- Back to All --}}
         <div>
             <a href="{{ route('admin.projects.index') }}" class="btn btn-dark">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
         </div>
+        {{-- / Back to All --}}
+
         <div class="row justify-content-center">
             <div class="col col-8">
 
-                {{-- TITLE --}}
+                {{-- HEADING --}}
                 <div class="mb-3 pb-2 border-bottom border-warning  border-2">
                     <span class="d-block mb-2"> MODIFY: </span>
                     <h4> {{ $project->title }}</h4>
                 </div>
+                {{-- / HEADING --}}
 
                 @include('partials.errors')
 
+                {{-- FORM PROJECT --}}
                 <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
-                    {{-- Title --}}
+                    {{-- Title project --}}
                     <div class="mb-3">
                         <label class="form-label" for="title">Title</label>
                         <input class="form-control  @error('title') is-invalid @enderror" id="title" type="text"
@@ -35,6 +40,7 @@
                             </div>
                         @enderror
                     </div>
+                    {{-- / Title project --}}
 
                     {{-- IMAGE --}}
                     <div class="mb-3">
@@ -47,12 +53,8 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                        {{-- Preview dell'immagine esistente --}}
-                        {{-- <div class="mt-3" style="max-height: 200px">
-                            <img id="image_preview" src="{{ asset('storage/' . $post->cover_image) }}"
-                                alt="{{ 'Cover image di ' . $post->title }}">
-                        </div> --}}
                     </div>
+                    {{-- / IMAGE --}}
 
                     {{-- Description --}}
                     <div class="mb-3">
@@ -66,19 +68,7 @@
                             </div>
                         @enderror
                     </div>
-
-                    {{-- Programs --}}
-                    {{-- <div class="mb-3">
-                        <label class="form-label" for="utilized_programs">Utilized programs & technology</label>
-                        <input class="form-control @error('utilized_programs') is-invalid @enderror" type="text"
-                            id="utilized_programs" name="utilized_programs" value="{{ $project->utilized_programs }}">
-
-                        @error('utilized_programs')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div> --}}
+                    {{-- / Description --}}
 
                     {{-- Year --}}
                     <div class="mb-3">
@@ -93,12 +83,16 @@
                             </div>
                         @enderror
                     </div>
+                    {{-- / Year --}}
 
-                    {{-- BTN --}}
+                    {{-- Btn SAVE --}}
                     <div class="mb-3 pt-2">
                         <button type="submit" class="btn btn-warning">Save</button>
                     </div>
+                    {{-- /Btn SAVE --}}
+
                 </form>
+                {{-- /FORM PROJECT --}}
             </div>
         </div>
     </div>

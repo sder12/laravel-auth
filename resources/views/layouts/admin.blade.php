@@ -49,6 +49,7 @@
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
+                            {{-- Dashboard --}}
                             <li class="nav-item">
                                 <a class="nav-link text-white 
                                     {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-secondary' : '' }}"
@@ -57,6 +58,7 @@
                                     Dashboard
                                 </a>
                             </li>
+                            {{-- Projects INDEX --}}
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() === 'admin.projects.index' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.projects.index') }}">
@@ -64,6 +66,7 @@
                                     Projects
                                 </a>
                             </li>
+                            {{-- CREATE --}}
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() === 'admin.projects.create' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.projects.create') }}">
